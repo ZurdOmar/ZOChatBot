@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Database & Logs
+consultorio.db
+*.log
+webhook_log.txt
+
+# Google Cloud Credentials
+*.json
+
+# IDEs
+.vscode/
+.idea/
+.gemini/
