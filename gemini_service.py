@@ -8,7 +8,7 @@ import traceback
 class GeminiEngine:
     def __init__(self, api_key):
         self.client = genai.Client(api_key=api_key)
-        self.model_id = "gemini-2.0-flash"
+        self.model_id = "gemini-flash-latest"
 
     def generar_respuesta(self, mensaje_usuario, client_data, numero_telefono):
         """Genera una respuesta inteligente basada en el contexto del cliente y su base de conocimientos."""

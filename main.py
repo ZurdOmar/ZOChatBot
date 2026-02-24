@@ -10,7 +10,7 @@ import whatsapp_service
 from gemini_service import GeminiEngine
 
 # Cargar configuración
-load_dotenv()
+load_dotenv(override=True)
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 VERIFY_TOKEN = os.getenv("VERIFY_TOKEN")
 

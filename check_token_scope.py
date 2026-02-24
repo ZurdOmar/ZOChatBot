@@ -4,9 +4,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-TOKEN = os.getenv("WHATSAPP_TOKEN")
+TOKEN = "EAAoC7oYRllsBQ2kZAdyeLTW2y0AlIuFsWT5DjYwvs4MlpQbrWfcsJcGTDPK3ZAl4s0GLsPFJ7IIdx2vKsEOyjb4M7wGOv8X7TNvoVrhWId7uZC3Mgatr8DQf3wLXaQyhZB4YOO3J8DGfzmieSSrkzFA4oYPleTT7A6ZBhTrLntZACZBtUPbr7NJjZBgbFbRQNVL8GKv4deFbZAZAg3Otv41CtFnh2LvJmwee7BoenI8Wf33M9E65ZBVB1A92JtlQC5xRdVBGqbOPmDhJEO3QbAmg6ESZBKwZD"
 # We'll also check the specific ID the user provided
-TARGET_ID = "1059252797263545"
+TARGET_ID = "980996958435648"
 
 def debug_permissions():
     print("--- 🔍 DIAGNÓSTICO DE TOKEN Y PERMISOS ---")

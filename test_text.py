@@ -17,7 +17,7 @@ def test_text_message():
     headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
     data = {
         "messaging_product": "whatsapp",
-        "to": "523123173431", # Omar's number
+        "to": "5213351380285", # User's personal number
         "type": "text",
         "text": {
             "body": "¡Hola Omar! Soy tu bot con el nuevo Token de Sistema. 🤖🚀"

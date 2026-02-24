@@ -53,15 +53,7 @@ def init_db():
         )
     ''')
     
-    # Tabla de Citas (Asegurar que tenga client_id)
-    cursor.execute("PRAGMA table_info(citas)")
-    columns = [column[1] for column in cursor.fetchall()]
-    
-    if "client_id" not in columns:
-        print("🔧 Agregando columna 'client_id' a la tabla 'citas'...")
-        cursor.execute('ALTER TABLE citas ADD COLUMN client_id INTEGER REFERENCES clients(id)')
-    
-    # Asegurar que la tabla exista (si no existía)
+    # Asegurar que la tabla exista primero
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS citas (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -74,6 +66,14 @@ def init_db():
             FOREIGN KEY (client_id) REFERENCES clients (id)
         )
     ''')
+
+    # Ahora verificar y agregar client_id si es necesario (para migraciones futuras)
+    cursor.execute("PRAGMA table_info(citas)")
+    columns = [column[1] for column in cursor.fetchall()]
+    
+    if "client_id" not in columns:
+        print("🔧 Agregando columna 'client_id' a la tabla 'citas'...")
+        cursor.execute('ALTER TABLE citas ADD COLUMN client_id INTEGER REFERENCES clients(id)')
     
     conn.commit()
     conn.close()
